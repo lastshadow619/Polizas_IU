@@ -1,0 +1,57 @@
+<div id="left-sidebar" class="left-sidebar ">
+  <!-- main-nav -->
+  <div class="sidebar-scroll">
+    <nav class="main-nav">
+      <ul class="main-menu">
+        <li class="active">
+
+          <ul class="sub-menu open">
+            <li class="active">
+              <a [routerLink]="['/template/controlpanel']">
+                <i class="fa fa-bar-chart-o fw"></i>
+                <span class="text">Panel de Control</span>
+
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/template/polizas']">
+                <i class="fa fa-edit"></i>
+                <span class="text">Pólizas</span>
+
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/template/reportes']">
+                <i class="fa fa-folder-open"></i>
+                <span class="text">Reportes</span>
+              </a>
+
+            </li>
+            <li>
+              <a href="#" class="js-sub-menu-toggle">
+                <i class="fa fa-cogs"></i>
+                <span class="text">Administrar</span>
+                <i class="toggle-icon fa fa-angle-left"></i>
+              </a>
+              <ul class="sub-menu ">
+                <li>
+                  <a [routerLink]="['/template/estados']">
+                    <i class="fa fa-server"></i>
+                    <span class="text">Estados</span>
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/template/cobertura']">
+                    <i class="fa fa-shield"></i>
+                    <span class="text">Cobertura</span>
+                  </a>
+                </li>
+              </ul>
+            </li>         
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- /main-nav -->
+  </div>
+</div>
