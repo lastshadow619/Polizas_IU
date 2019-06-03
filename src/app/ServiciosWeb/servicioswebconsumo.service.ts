@@ -20,7 +20,6 @@ export class ServiciosWebConsumo {
     //Servicio Web Prueba 
     ServicioWebPrueba(strEstablecimiento) {
         let headers = new Headers();
-        ftyyfty
         var parametros = strEstablecimiento;
         headers.append('Content-Type', 'application/json');
         return this.http.get(this.urlservicio + 'ServicioWebComprobantes/ServiciosComprobantes/ListadoEstablecimiento/' + parametros)
