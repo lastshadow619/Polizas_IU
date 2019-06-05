@@ -10,10 +10,12 @@ import { Observable, Subject, throwError } from 'rxjs';
 export class ServiciosWebConsumo {
     private urlservicio: String;
     private urlcentralizada: String;
+    private urlingresopol: String;
 
     constructor(private http: Http, server: ConfiguracionesUrl, private hpptclient: HttpClient) {
         this.urlservicio = server.url1;
         this.urlcentralizada = server.url2;
+        this.urlingresopol = server.url3;
     }
 
 
@@ -39,6 +41,31 @@ export class ServiciosWebConsumo {
         return this.http.post(this.urlservicio + 'ServicioWebComprobantes/ServiciosComprobantes/AnulacionFactura', content, { headers: headers })
             .pipe(map(res => res.json()))
     }
+    //Servicio Ingreso Poliza
+    ServicioWebIngresoPoliza(Parametro1, Parametro2, Parametro3, Parametro4, Parametro5, Parametro6, Parametro7, Parametro8, Parametro9, Parametro10, Parametro11, Parametro12, Parametro13, Parametro14,Parametro15) {
+        let headers = new Headers();
+        var content = JSON.stringify({
+            parametro1: Parametro1,
+            parametro2: Parametro2,
+            parametro3: Parametro3,
+            parametro4: Parametro4,
+            parametro5: Parametro5,
+            parametro6: Parametro6,
+            parametro7: Parametro7,
+            parametro8: Parametro8,
+            parametro9: Parametro9,
+            parametro10: Parametro10,
+            parametro11: Parametro11,
+            parametro12: Parametro12,
+            parametro13: Parametro13,
+            parametro14: Parametro14,
+            parametro15: Parametro15
+        });
+        headers.append('Content-Type', 'application/json');
+        return this.http.post(this.urlingresopol + 'ingresarPoliza/', content, { headers: headers })
+            .pipe(map(res => res.json()))
+    }
+
     //Servicio Web Prueba 
     CentralizadaComnsumo(parametro1) {
         let headers = new Headers();
