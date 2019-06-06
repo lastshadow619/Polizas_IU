@@ -44,8 +44,8 @@
                                 <label for="ticket-type" class="col-sm-3 control-label">Aseguradora:</label>
                                 <div class="col-sm-9">
                                   <select id="idaseguradora" [(ngModel)]="idaseguradora" name="idaseguradora" class="form-control input-sm"
-                                    type="text" placeholder=".input-sm">
-                                    <option value="1">Seguros Colonial (Quito)</option>
+                                    type="text" placeholder=".input-sm" required>
+                                    <option value="1" selected>Seguros Colonial (Quito)</option>
                                     <option value="2">Seguros Colnial QBE</option>
                                     <option value="3">Seguros Oriente</option>
                                     <option value="4">Aseguradora del Sur</option>
@@ -55,14 +55,14 @@
                                     <option value="8">Seguros Confianza</option>
                                     <option value="9">Banco Internacional</option>
                                   </select>
-                                </div>
+                                </div> 
                               </div>
                               <div class="form-group">
                                 <label for="ticket-type" class="col-sm-3 control-label">Cobertura:</label>
                                 <div class="col-sm-9">
                                   <select id="idcobertura" [(ngModel)]="idcobertura" name="idcobertura" class="form-control input-sm" type="text"
                                     placeholder=".input-sm">
-                                    <option value="1">Buen uso de Anticipo</option>
+                                    <option value="1" selected>Buen uso de Anticipo</option>
                                     <option value="2">Cumplimiento de Contrato</option>
                                     <option value="3">Garantía Bancaria</option>
                                     <option value="4">Certificación de depósito a plazo fijo</option>
@@ -87,7 +87,7 @@
                                 <div class="col-sm-9">
                                   <select id="idestado" [(ngModel)]="idestado" name="idestado" class="form-control input-sm" type="text"
                                     placeholder=".input-sm">
-                                    <option value="1">Vigente</option>
+                                    <option selected value="1" >Vigente</option>
                                     <option value="2">Caducada</option>
                                   </select>
                                 </div>
@@ -165,12 +165,13 @@
                                 <label for="ticket-attachment" class="col-sm-3 control-label">Adjuntar Archivo</label>
                                 <div class="col-md-9">
                                   <input type="file" [(ngModel)]="polpdf" [ngModelOptions]="{standalone: true}" accept=".pdf" id="polizaPDF">
-                                  <p class="help-block"><em>Tipo de Archivo válido: .pdf</em></p>
+                                  <p class="help-block"><em>Tipo de Archivo válido: .pdf. 
+                                      MB</em></p>
                                 </div>
                               </div>
                               
                                 <div class="col-sm-offset-3 col-sm-9">
-                                  <button type="submit" (click)="ingresarPoliza()" data-dismiss="modal"  class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
+                                  <button type="submit"  data-dismiss="modal" (click)="ingresarPoliza()" class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
                                   <input type="reset" class="btn btn-info" value="Limpiar Campos">
                                 </div>
                               
@@ -195,29 +196,187 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Mostrar y modificar</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modificar o Eliminar una Póliza</a>
           </h4>
         </div>
         <div id="collapse2" class="panel-collapse collapse">
-          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div class="panel-body">
+              <div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_jqgrid" dir="ltr" style="width: 1180px;">
+                  <div class="ui-widget-overlay jqgrid-overlay" id="lui_jqgrid" style="display: none;"></div>
+                  <div class="loading ui-state-default ui-state-active" id="load_jqgrid" style="display: none;">Loading...</div>
+                  <div class="ui-jqgrid-view" id="gview_jqgrid" style="width: 1180px;">
+                     <div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix"><a role="link" class="ui-jqgrid-titlebar-close HeaderButton" style="right: 0px;"><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title">LISTADO COMPLETO DE LAS PÓLIZAS </span></div>
+                     <div class="ui-state-default ui-jqgrid-hdiv" style="width: 1180px;">
+      
+                     </div>
+                     <div class="ui-jqgrid-bdiv" style="height: 480px; width: 1580px;">
+                        <div style="position:relative;">
+                           <div></div>
+                         <!-- 
+                           <table id="jqgrid" class="table table-striped table-hover ui-jqgrid-btable" tabindex="0" cellspacing="0" cellpadding="0" border="0" role="grid" aria-multiselectable="true" aria-labelledby="gbox_jqgrid" style="width: 998px;">
+                             -->
+                             <font size="2" > 
+                              <table id="datatable-basic-scrolling" class="ui-jqgrid-htable" role="grid" aria-describedby="datatable-basic-scrolling_info" style="width: 100%;">  
+                                    <thead>
+                                          <tr class="ui-jqgrid-labels" role="rowheader">                                       
+                                             <th id="jqgrid_myac" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 80px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_myac" class="ui-jqgrid-sortable"> <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>                                       
+                                             <th id="jqgrid_client_id" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_client_id" class="ui-jqgrid-sortable">ASEGURADORA<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_invdate" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_invdate" class="ui-jqgrid-sortable">CI/RUC CONTRATISTA<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_invdate" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                   <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                   <div id="jqgh_jqgrid_invdate" class="ui-jqgrid-sortable">CONTRATISTA<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                </th>
+                                             <th id="jqgrid_amount" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 85px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_amount" class="ui-jqgrid-sortable">N° CONTRATO <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_tax" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_tax" class="ui-jqgrid-sortable">COBERTURA<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_total" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_total" class="ui-jqgrid-sortable">CONCEPTO<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_closed" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 80px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_closed" class="ui-jqgrid-sortable">N° POLIZA<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA PAGO ANTICIPO CONTRATO<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA INICIAL DE COBERTURA<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                             </th>
+                                             <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                   <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                   <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA INICIAL <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                </th>
+                                             <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
+                                                   <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                   <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA FINAL<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                </th>
+                                                <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 170px;">
+                                                      <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                      <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">VALOR COBERTURA INICIAL<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                   </th>
+                                                   <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 170px;">
+                                                         <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                         <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">VALOR COBERTURA ACTUAL<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                      </th>
+                                                      <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 300px;">
+                                                            <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                            <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">OBSERVACIONES<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                         </th>
+                                                         <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 180px;">
+                                                               <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                               <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">NUMERO DE RENOVACIONES<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                            </th>
+                                                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 120px;">
+                                                                  <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                                                  <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">ADMIN CONTRATO<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div>
+                                                               </th>
+                                          </tr>
+                                       </thead>
+                                 <tbody>
+                                 <tr class="jqgfirstrow" role="row" style="height:auto">
+                                    <td role="gridcell" style="height:0px;width:25px;"></td>
+                                    <td role="gridcell" style="height:0px;width:80px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 80px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 100px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 100px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 85px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 60px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 100px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 80px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 85px;"></td>
+                                    <td role="gridcell" style="height: 0px; width: 203px;"></td>
+                                 </tr>
+                                 <tr *ngFor="let objDatos of vecPoliza" class="ui-widget-content jqgrow ui-row-ltr ui-state-hover">
+                                    <td role="gridcell" title="" aria-describedby="jqgrid_myac">
+                                       <div style="margin-left:8px;">
+                                          <a title="Modificar" href="/template/modificar?id={{objDatos.idpolizatabla}}"><img src="assets\images\editar.PNG" width="20" height="20"></a>
+                                          <a title="Eliminar" href="/template/eliminar?id={{objDatos.idpolizatabla}}"><img src="assets\images\eliminar.PNG" width="20" height="20"></a>
+                                       </div>
+                                    </td>
+                                    <td role="gridcell" >{{objDatos.idaseguradora.nombreaseguradora}}</td>  
+                                    <td role="gridcell" >{{objDatos.idcontrato.idcontratista.ciruc}}</td>    
+                                    <td role="gridcell" >{{objDatos.idcontrato.idcontratista.nombrecontratista}}</td>    
+                                    <td role="gridcell" >{{objDatos.idcontrato.codcontrato}}</td>    
+                                    <td role="gridcell" >{{objDatos.idcobertura.descripcioncobertura}}</td>    
+                                    <td role="gridcell" >{{objDatos.idcontrato.concepto}}</td>    
+                                    <td role="gridcell" >{{objDatos.numpoliza}}</td>                         
+                                    <td role="gridcell" >{{objDatos.fechapagoanticipo}}</td>  
+                                    <td role="gridcell" >{{objDatos.fechainicialcobertura}}</td>                               
+                                    <td role="gridcell" >{{objDatos.vencimientofechainicial}}</td>    
+                                    <td role="gridcell" >{{objDatos.vencimientofechafinal}}</td>    
+                                    <td role="gridcell" >{{objDatos.valorcoberturainicial}}</td>    
+                                    <td role="gridcell" >{{objDatos.valorcoberturaactual}}</td>    
+                                    <td role="gridcell" >{{objDatos.observaciones}}</td>    
+                                    <td role="gridcell" >{{objDatos.numrenovaciones}}</td>    
+                                    <td role="gridcell" >{{objDatos.idcontrato.idadministrador.nombreadmin}}</td>    
+       
+                              </tbody>
+                           </table>
+                        </font>
+                           <div class="row">
+                              <div class="col-xs-6"></div>
+                              <div class="col-xs-6">
+                                 <div id="datatable-basic-scrolling_filter" class="dataTables_filter">
+                                    </div>
+                              </div>
+                           </div>   
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="ui-jqgrid-resize-mark" id="rs_mjqgrid">&nbsp;</div>
+                  <div id="jqgrid-pager" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr" style="width: 1016px;">
+                     <div id="pg_jqgrid-pager" class="ui-pager-control" role="group">
+                        <table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table" style="width:100%;table-layout:fixed;height:100%;" role="row">
+                           <tbody>
+                              <tr>
+                                 <td id="jqgrid-pager_left" align="left">
+                                    <table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table navtable" style="float:left;table-layout:auto;">
+                                       <tbody>
+                                          <tr>
+                                                <td class="ui-pg-button ui-corner-all" title="Reload Grid" id="refresh_jqgrid">
+                                                      <div class="ui-pg-div"><span class="ui-icon ui-icon-refresh" (click)="ConsumoPoliza()"></span></div>
+                                                   </td>
+                                             <td class="ui-pg-button ui-corner-all" title="Find records" id="search_jqgrid">
+                                                <div class="ui-pg-div"><span class="ui-icon ui-icon-search"></span></div>
+                                             </td>
+                                             
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                                 
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+          
+          </div>
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Mostrar y Eliminar</a>
-          </h4>
-        </div>
-        <div id="collapse3" class="panel-collapse collapse">
-          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-        </div>
-      </div>
+      
     </div>
   </div>
+  
 
   <p>{{idaseguradora}}</p>
   <p>{{idcobertura}}</p>

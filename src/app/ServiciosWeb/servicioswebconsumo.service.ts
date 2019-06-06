@@ -11,11 +11,13 @@ export class ServiciosWebConsumo {
     private urlservicio: String;
     private urlcentralizada: String;
     private urlingresopol: String;
+    private urlPruebaEd: String;
 
     constructor(private http: Http, server: ConfiguracionesUrl, private hpptclient: HttpClient) {
         this.urlservicio = server.url1;
         this.urlcentralizada = server.url2;
         this.urlingresopol = server.url3;
+        this.urlPruebaEd = server.url4;
     }
 
 
@@ -65,7 +67,20 @@ export class ServiciosWebConsumo {
         return this.http.post(this.urlingresopol + 'ingresarPoliza/', content, { headers: headers })
             .pipe(map(res => res.json()))
     }
-
+    //Servicio web listar todas las polizas
+    ServicioWebPruebaED(){
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/obtenertodos')
+            .pipe(map(res => res.json()))
+    }
+    //Servicio web listar todas las polizas
+    ServicioWebPruebaED1(){
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/vencimiento/2019-06-20')
+            .pipe(map(res => res.json()))
+    }
     //Servicio Web Prueba 
     CentralizadaComnsumo(parametro1) {
         let headers = new Headers();
