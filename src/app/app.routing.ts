@@ -13,13 +13,22 @@ import { CoberturaComponent } from './cobertura/cobertura.component';
 import { ControlpanelComponent } from './controlpanel/controlpanel.component';
 import { PolizasComponent } from './polizas/polizas.component';
 import { ReportesComponent } from './reportes/reportes.component';
-
+import { ModificarComponent } from './modificar/modificar.component';
+import { ModificarEstadoComponent } from './modificar-estado/modificar-estado.component';
 const appRoutes: Routes = [
 
     {
         path: 'template',
         component: PlantillaIntegradaComponent,
         children: [
+            {
+                path: 'modificarEstado',
+                component: ModificarEstadoComponent
+            },
+            {
+                path: 'modificar',
+                component: ModificarComponent
+            },
             {
                 path: 'ingresoPol',
                 component: IngresoPolizasComponent

@@ -1,0 +1,152 @@
+
+
+            <!-- SUPPOR TICKET FORM -->
+            <div class="widget">
+              <div class="widget-header">
+                <h3><i class="fa fa-edit"></i> Modificación de Datos</h3>
+              </div>
+              <div class="widget-content">
+                <form (ngSubmit)="ingresarPoliza()" class="form-horizontal" role="form">
+                  <fieldset>
+                    <legend>Información General</legend>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Aseguradora:</label>
+                      <div class="col-sm-9">
+                        <select id="idaseguradora" [(ngModel)]="idaseguradora" name="idaseguradora" class="form-control input-sm"
+                          type="text" placeholder=".input-sm">
+                          <option value="1">Seguros Colonial (Quito)</option>
+                          <option value="2">Seguros Colnial QBE</option>
+                          <option value="3">Seguros Oriente</option>
+                          <option value="4">Aseguradora del Sur</option>
+                          <option value="5">Seguros Equinoccial</option>
+                          <option value="6">Latina de Seguros y Reaseguros</option>
+                          <option value="7">Banco del Pichincha</option>
+                          <option value="8">Seguros Confianza</option>
+                          <option value="9">Banco Internacional</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Cobertura:</label>
+                      <div class="col-sm-9">
+                        <select id="idcobertura" [(ngModel)]="idcobertura" name="idcobertura" class="form-control input-sm" type="text"
+                          placeholder=".input-sm">
+                          <option value="1">Buen uso de Anticipo</option>
+                          <option value="2">Cumplimiento de Contrato</option>
+                          <option value="3">Garantía Bancaria</option>
+                          <option value="4">Certificación de depósito a plazo fijo</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Contrato:</label>
+                      <div class="col-sm-9">
+                        <input [(ngModel)]="idcontrato" [ngModelOptions]="{standalone: false}" type="text" value="2" class="form-control" id="idcontra"  required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Número de Póliza:</label>
+                      <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="numpoliza" value="43/2018" [ngModelOptions]="{standalone: false}" class="form-control" id="numpol" placeholder="Número de Póliza" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Estado:</label>
+
+                      <div class="col-sm-9">
+                        <select id="idestado" [(ngModel)]="idestado" name="idestado" class="form-control input-sm" type="text"
+                          placeholder=".input-sm">
+                          <option value="1">Vigente</option>
+                          <option value="2">Caducada</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-message" class="col-sm-3 control-label">Fecha inicial de
+                        Cobertura:</label>
+                      <div class="col-sm-9">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                          <input type="date" [(ngModel)]="finicob" value="2019-05-29" [ngModelOptions]="{standalone: false}"  id="finicob" class="form-control" required> 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-message" class="col-sm-3 control-label">Fecha pago de
+                        Anticipo:</label>
+                      <div class="col-sm-9">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                          <input type="date" [(ngModel)]="fpagoant" value="2019-05-17" [ngModelOptions]="{standalone: false}" id="fpagoant" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
+                        Inicial:</label>
+                      <div class="col-sm-9">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                          <input type="date" [(ngModel)]="vencini" value="2019-06-12" [ngModelOptions]="{standalone: false}" id="fvencini" class="form-control" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
+                        Final:</label>
+                      <div class="col-sm-9">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i  class="fa fa-calendar"></i></span>
+                          <input type="date" [(ngModel)]="vencfin" value="2019-06-12" [ngModelOptions]="{standalone: false}" id="fvencfin" class="form-control" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-message" class="col-sm-3 control-label">Observaciones</label>
+                      <div class="col-sm-9">
+                        <textarea class="form-control" [(ngModel)]="observaciones" value="todo bien" [ngModelOptions]="{standalone: false}" name="observaciones" id="observaciones" rows="4"
+                          cols="30" placeholder="Message">Todo bien</textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Número de Renovación:</label>
+                      <div class="col-sm-9">
+                        <input type="number" [(ngModel)]="numrenov" value="4" [ngModelOptions]="{standalone: false}" class="form-control" id="numrenov"
+                          placeholder="N° Renovación" min="1" max="500">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="ticket-type" class="col-sm-3 control-label">Valor Inicial:</label>
+                      <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="valini" value="$150.00" [ngModelOptions]="{standalone: false}" class="form-control" id="valini" placeholder="$" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-type" class="col-sm-3 control-label">Valor Final:</label>
+                        <div class="col-sm-9">
+                          <input type="text" [(ngModel)]="valfin" value="$100.00" [ngModelOptions]="{standalone: false}" class="form-control" id="valfin" placeholder="$" required>
+                        </div>
+                      </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Agregar PFD</legend>
+                      <div class="form-group">
+                      <label for="ticket-attachment" class="col-sm-3 control-label">Adjuntar Archivo</label>
+                      <div class="col-md-9">
+                        <input type="file" [(ngModel)]="polpdf" [ngModelOptions]="{standalone: true}" accept=".pdf" id="polizaPDF">
+                        <p class="help-block"><em>Tipo de Archivo válido: .pdf</em></p>
+                      </div>
+                    </div>
+                    
+                      <div class="col-sm-offset-3 col-sm-9">
+                        <button type="submit"  data-dismiss="modal"  class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
+                        <input type="reset" class="btn btn-info" value="Cargar Datos">
+                      </div>
+                    
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+            <!-- END SUPPORT TICKET FORM -->
+
+ 

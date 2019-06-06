@@ -1,0 +1,29 @@
+
+            <!-- SUPPOR TICKET FORM -->
+            <div class="widget">
+                <div class="widget-header">
+                  <h3><i class="fa fa-edit"></i> Modificación de Datos</h3>
+                </div>
+                <div class="widget-content">
+                  <form (ngSubmit)="ingresarEstado()" class="form-horizontal" role="form">
+                    <fieldset>
+                      <legend>Información General</legend>
+                      <div class="form-group">
+                          <label for="ticket-type" class="col-sm-3 control-label">Descripción de Estado:</label>
+                          <div class="col-sm-9">
+                            <input [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" type="text" value="Ejemplo de Estado a Modificar"  class="form-control" id="descripcionestado" placeholder="Ingrese la Descripción" required>
+                          </div>
+                        </div>
+                      
+                        <div class="col-sm-offset-3 col-sm-9">
+                          <button type="submit"  data-dismiss="modal"  class="btn btn-success">Guardar Estado</button>&nbsp;&nbsp;
+                          <input type="reset" class="btn btn-info" value="Cargar Datos">
+                        </div>
+                      
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+              <!-- END SUPPORT TICKET FORM -->
+  
+   

@@ -10,11 +10,11 @@ import { HttpModule } from '@angular/http';
   ],
 })
 @Component({
-  selector: 'app-polizas',
-  templateUrl: './polizas.component.html',
-  styleUrls: ['./polizas.component.css']
+  selector: 'app-modificar',
+  templateUrl: './modificar.component.html',
+  styleUrls: ['./modificar.component.css']
 })
-export class PolizasComponent implements OnInit {
+export class ModificarComponent implements OnInit {
   public vecPoliza:Array<any>;
   public idaseguradora: Int32Array;
   public idcobertura: Int32Array;
@@ -35,8 +35,6 @@ export class PolizasComponent implements OnInit {
   constructor(private servicios: ServiciosWebConsumo, private mensaje: Mensajes, ) { }
 
   ngOnInit() {
-    this.servicios.ServicioWebPruebaED().subscribe(polizas=>
-      {this.vecPoliza=polizas;});  
 
   }
   MensajeError() {
@@ -49,9 +47,6 @@ export class PolizasComponent implements OnInit {
 
   ConsumoPoliza(){    
     try {
-      this.servicios.ServicioWebPruebaED().subscribe(polizas=>{
-    this.vecPoliza=polizas;          
-    })   
       if(this.vecPoliza==null)
           this.MensajeError();
           else
@@ -65,12 +60,10 @@ export class PolizasComponent implements OnInit {
   }
  
   ingresarPoliza() {  
-      window.alert('Error en el ingreso!!');
+      window.alert('Error en la Actualización!!');
       window.close();
     }
-    buscarPoliza() {  
-      window.alert('Datos encontrados!!');
-      window.close();
-    }
+    
   
 }
+
