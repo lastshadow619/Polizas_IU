@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ServiciosWebConsumo } from '../ServiciosWeb/servicioswebconsumo.service'; //para servicio
 import { Mensajes } from '../Recursos/Mensajes.services';
-
+declare var $;
 
 @Component({
   selector: 'app-reportes',
@@ -15,14 +15,21 @@ export class ReportesComponent implements OnInit {
   
   public vecPoliza:Array<any>;
   public vecPoliza1:Array<any>;
+  @ViewChild('dataTable') table: ElementRef;
+  dataTable: any;
+
 
   constructor(private servicios: ServiciosWebConsumo, private mensaje: Mensajes) {   
   }
-  ngOnInit() {      
+  
+  ngOnInit():void {    
+    
     this.servicios.ServicioWebPruebaED().subscribe(polizas=>
     {this.vecPoliza=polizas;});   
     this.servicios.ServicioWebPruebaED1().subscribe(polizas1=>
       {this.vecPoliza1=polizas1;});   
+      this.dataTable =$(this.table.nativeElement);
+    this.dataTable.dataTable();  
   }
   
   MensajeError() {
