@@ -1,3 +1,121 @@
-<p>
-  cobertura works!
-</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Tipo de Cobertura de las Pólizas</h2>
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Ingreso Nueva Cobertura</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <!-- MODAL DIALOG -->
+                        <div class="widget">
+                            <div class="widget-content" style="align-items: inherit">
+                                <button class="btn btn-primary btn-lg" style="margin-left: 40%" data-toggle="modal" data-target="#myModal">Ingresar una nueva cobertura</button>
+
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel"></h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- SUPPOR TICKET FORM -->
+                                                <div class="widget">
+                                                    <div class="widget-header">
+                                                        <h3><i class="fa fa-edit"></i> Ingreso de Datos</h3>
+                                                    </div>
+                                                    <div class="widget-content">
+                                                        <form (ngSubmit)="ingresarEstado()" class="form-horizontal" role="form">
+                                                            <fieldset>
+                                                                <legend>Nueva Cobertura</legend>
+                                                                <div class="form-group">
+                                                                    <label for="ticket-type" class="col-sm-3 control-label">Descripción:</label>
+                                                                    <div class="col-sm-9">
+                                                                        <input [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="descripción" placeholder="Descripción del Estado" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-offset-3 col-sm-9">
+                                                                    <button type="submit" data-dismiss="modal" (click)="ingresarCobertura()" class="btn btn-success">Guardar Cobertura</button>&nbsp;&nbsp;
+                                                                    <input type="reset" class="btn btn-info" value="Limpiar Campos">
+                                                                </div>
+
+                                                            </fieldset>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- END SUPPORT TICKET FORM -->
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal"><i
+                                                  class="fa fa-times-circle"></i> Cerrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END MODAL DIALOG -->
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modificar y Eliminar un tipo de Cobertura</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <table id="dt" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>ID</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let objDatos of vecCobertura">
+                                <td>
+                                    <div style="margin-left:8px;">
+                                        <a title="Modificar" href="/template/modificar?id={{objDatos.idcobertura}}"><img src="assets\images\editar.PNG" width="20" height="20"></a>
+                                        <a title="Eliminar" href="/template/eliminar?id={{objDatos.idcobertura}}"><img src="assets\images\eliminar.PNG" width="20" height="20"></a>
+                                    </div>
+                                </td>
+                                <td>{{objDatos.idcobertura}}</td>
+                                <td>{{objDatos.descripcioncobertura}}</td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th>ID</th>
+                                <th>Descripción</th>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <!-- FIN TABLA DE BUSQUEDA -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

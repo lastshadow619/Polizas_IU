@@ -1,9 +1,10 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, ViewChild, ElementRef } from '@angular/core';
 import { ServiciosWebConsumo } from '../ServiciosWeb/servicioswebconsumo.service'; //traer las direcciones de los servicios
 import { Mensajes } from '../Recursos/Mensajes.services';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HttpModule } from '@angular/http';
+declare var $;
 @NgModule({
   imports: [ 
    ReactiveFormsModule,FormBuilder,FormGroup, Validators,FormControl
@@ -22,6 +23,9 @@ export class EstadosComponent implements OnInit {
   constructor(private servicios: ServiciosWebConsumo, private mensaje: Mensajes,) { }
 
   ngOnInit() {
+    $(function (){
+      $('#dt').DataTable();
+    });
     this.servicios.ServicioWebEstado().subscribe(estados=>
       {this.vecEstados=estados;});  
 
@@ -33,23 +37,6 @@ export class EstadosComponent implements OnInit {
    MensajeCorrecto() {
     var  item=alert("Datos Cargados Correctamente");
    }
-
-   ConsumoEstado(){    
-    try {
-      this.servicios.ServicioWebEstado().subscribe(estados=>{
-    this.vecEstados=estados;          
-    })   
-      if(this.vecEstados==null)
-          this.MensajeError();
-          else
-          this.MensajeCorrecto();
-    }
-    catch(error) { 
-      this.MensajeError();
-      console.error(error);
-      
-    } 
-  }
  
   ingresarEstado() {  
       window.alert('Error en el ingreso!!');

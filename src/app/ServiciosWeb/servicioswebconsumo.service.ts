@@ -74,6 +74,13 @@ export class ServiciosWebConsumo {
         return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.tipoestado/listarEstadosPolizas')
             .pipe(map(res => res.json()))
     }
+     //Servicio web listar todos las coberturas http://localhost:8080/AD_Polizas/webresources/entidades.tipocobertura
+     ServicioWebCobertura(){
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.tipocobertura/')
+            .pipe(map(res => res.json()))
+    }
     //Servicio web listar todas las polizas
     ServicioWebPruebaED(){
         let headers = new Headers();
@@ -85,7 +92,7 @@ export class ServiciosWebConsumo {
     ServicioWebPruebaED1(){
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/vencimiento/2019-06-20')
+        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/vencimiento/2019-06-25')
             .pipe(map(res => res.json()))
     }
     //Servicio Web Prueba 

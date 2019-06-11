@@ -37,7 +37,9 @@ export class PolizasComponent implements OnInit {
   ngOnInit() {
     this.servicios.ServicioWebPruebaED().subscribe(polizas=>
       {this.vecPoliza=polizas;});  
-
+      $(function (){
+        $('#dt1').DataTable();
+      });
   }
   MensajeError() {
     var  item=alert("No se han recibido datos");

@@ -2,50 +2,47 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-  <div class="container">
-    <h2>Pólizas de Seguro</h2>
-    <div class="panel-group" id="accordion">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Ingreso de una Nueva</a>
-          </h4>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse in">
+    <div class="container">
+        <h2>Pólizas de Seguro</h2>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Ingreso de una Nueva</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
 
-          <!-- MODAL DIALOG -->
-          <div class="widget">
-            <div class="widget-content" style="align-items: inherit">
-              <button class="btn btn-primary btn-lg" style="margin-left: 45%" data-toggle="modal"
-                data-target="#myModal">Ingresar una nueva Póliza</button>
-              
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="myModalLabel"></h4>
-                    </div>
-                    <div class="modal-body">
-                      <!-- SUPPOR TICKET FORM -->
-                      <div class="widget">
-                        <div class="widget-header">
-                          <h3><i class="fa fa-edit"></i> Ingreso de Datos</h3>
-                        </div>
-                        <div class="widget-content">
-                          <form (ngSubmit)="ingresarPoliza()" class="form-horizontal" role="form">
-                            <fieldset>
-                              <legend>Información General</legend>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Aseguradora:</label>
-                                <div class="col-sm-9">
-                                  <select id="idaseguradora" [(ngModel)]="idaseguradora" name="idaseguradora"
-                                    class="form-control input-sm" type="text" placeholder=".input-sm" required>
+                    <!-- MODAL DIALOG -->
+                    <div class="widget">
+                        <div class="widget-content" style="align-items: inherit">
+                            <button class="btn btn-primary btn-lg" style="margin-left: 45%" data-toggle="modal" data-target="#myModal">Ingresar una nueva Póliza</button>
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- SUPPOR TICKET FORM -->
+                                            <div class="widget">
+                                                <div class="widget-header">
+                                                    <h3><i class="fa fa-edit"></i> Ingreso de Datos</h3>
+                                                </div>
+                                                <div class="widget-content">
+                                                    <form (ngSubmit)="ingresarPoliza()" class="form-horizontal" role="form">
+                                                        <fieldset>
+                                                            <legend>Información General</legend>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Aseguradora:</label>
+                                                                <div class="col-sm-9">
+                                                                    <select id="idaseguradora" [(ngModel)]="idaseguradora" name="idaseguradora" class="form-control input-sm" type="text" placeholder=".input-sm" required>
                                     <option value="1" selected>Seguros Colonial (Quito)</option>
                                     <option value="2">Seguros Colnial QBE</option>
                                     <option value="3">Seguros Oriente</option>
@@ -56,530 +53,246 @@
                                     <option value="8">Seguros Confianza</option>
                                     <option value="9">Banco Internacional</option>
                                   </select>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Cobertura:</label>
-                                <div class="col-sm-9">
-                                  <select id="idcobertura" [(ngModel)]="idcobertura" name="idcobertura"
-                                    class="form-control input-sm" type="text" placeholder=".input-sm">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Cobertura:</label>
+                                                                <div class="col-sm-9">
+                                                                    <select id="idcobertura" [(ngModel)]="idcobertura" name="idcobertura" class="form-control input-sm" type="text" placeholder=".input-sm">
                                     <option value="1" selected>Buen uso de Anticipo</option>
                                     <option value="2">Cumplimiento de Contrato</option>
                                     <option value="3">Garantía Bancaria</option>
                                     <option value="4">Certificación de depósito a plazo fijo</option>
                                   </select>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Contrato:</label>
-                                <div class="col-sm-9">
-                                  <input [(ngModel)]="idcontrato" [ngModelOptions]="{standalone: true}" type="text"
-                                    class="form-control" id="idcontra" placeholder="Id de contrato" required>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Número de Póliza:</label>
-                                <div class="col-sm-9">
-                                  <input type="text" [(ngModel)]="numpoliza" [ngModelOptions]="{standalone: true}"
-                                    class="form-control" id="numpol" placeholder="Número de Póliza" required>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Estado:</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Contrato:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input [(ngModel)]="idcontrato" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="idcontra" placeholder="Id de contrato" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Número de Póliza:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" [(ngModel)]="numpoliza" [ngModelOptions]="{standalone: true}" class="form-control" id="numpol" placeholder="Número de Póliza" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Estado:</label>
 
-                                <div class="col-sm-9">
-                                  <select id="idestado" [(ngModel)]="idestado" name="idestado"
-                                    class="form-control input-sm" type="text" placeholder=".input-sm">
+                                                                <div class="col-sm-9">
+                                                                    <select id="idestado" [(ngModel)]="idestado" name="idestado" class="form-control input-sm" type="text" placeholder=".input-sm">
                                     <option selected value="1">Vigente</option>
                                     <option value="2">Caducada</option>
                                   </select>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-message" class="col-sm-3 control-label">Fecha inicial de
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-message" class="col-sm-3 control-label">Fecha inicial de
                                   Cobertura:</label>
-                                <div class="col-sm-9">
-                                  <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                    <input type="date" [(ngModel)]="finicob" [ngModelOptions]="{standalone: true}"
-                                      id="finicob" class="form-control" required>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-message" class="col-sm-3 control-label">Fecha pago de
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                        <input type="date" [(ngModel)]="finicob" [ngModelOptions]="{standalone: true}" id="finicob" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-message" class="col-sm-3 control-label">Fecha pago de
                                   Anticipo:</label>
-                                <div class="col-sm-9">
-                                  <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                    <input type="date" [(ngModel)]="fpagoant" [ngModelOptions]="{standalone: true}"
-                                      id="fpagoant" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                        <input type="date" [(ngModel)]="fpagoant" [ngModelOptions]="{standalone: true}" id="fpagoant" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
                                   Inicial:</label>
-                                <div class="col-sm-9">
-                                  <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                    <input type="date" [(ngModel)]="vencini" [ngModelOptions]="{standalone: true}"
-                                      id="fvencini" class="form-control" required>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                        <input type="date" [(ngModel)]="vencini" [ngModelOptions]="{standalone: true}" id="fvencini" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
                                   Final:</label>
-                                <div class="col-sm-9">
-                                  <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                    <input type="date" [(ngModel)]="vencfin" [ngModelOptions]="{standalone: true}"
-                                      id="fvencfin" class="form-control" required>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-message" class="col-sm-3 control-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                  <textarea class="form-control" [(ngModel)]="observaciones"
-                                    [ngModelOptions]="{standalone: true}" name="observaciones" id="observaciones"
-                                    rows="4" cols="30" placeholder="Message"></textarea>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Número de Renovación:</label>
-                                <div class="col-sm-9">
-                                  <input type="number" [(ngModel)]="numrenov" [ngModelOptions]="{standalone: true}"
-                                    class="form-control" id="numrenov" placeholder="N° Renovación" min="1" max="500">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Valor Inicial:</label>
-                                <div class="col-sm-9">
-                                  <input type="text" [(ngModel)]="valini" [ngModelOptions]="{standalone: true}"
-                                    class="form-control" id="valini" placeholder="$" required>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="ticket-type" class="col-sm-3 control-label">Valor Final:</label>
-                                <div class="col-sm-9">
-                                  <input type="text" [(ngModel)]="valfin" [ngModelOptions]="{standalone: true}"
-                                    class="form-control" id="valfin" placeholder="$" required>
-                                </div>
-                              </div>
-                            </fieldset>
-                            <fieldset>
-                              <legend>Agregar PFD</legend>
-                              <div class="form-group">
-                                <label for="ticket-attachment" class="col-sm-3 control-label">Adjuntar Archivo</label>
-                                <div class="col-md-9">
-                                  <input type="file" [(ngModel)]="polpdf" [ngModelOptions]="{standalone: true}"
-                                    accept=".pdf" id="polizaPDF">
-                                  <p class="help-block"><em>Tipo de Archivo válido: .pdf.
+                                                                <div class="col-sm-9">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                        <input type="date" [(ngModel)]="vencfin" [ngModelOptions]="{standalone: true}" id="fvencfin" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-message" class="col-sm-3 control-label">Observaciones</label>
+                                                                <div class="col-sm-9">
+                                                                    <textarea class="form-control" [(ngModel)]="observaciones" [ngModelOptions]="{standalone: true}" name="observaciones" id="observaciones" rows="4" cols="30" placeholder="Message"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Número de Renovación:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="number" [(ngModel)]="numrenov" [ngModelOptions]="{standalone: true}" class="form-control" id="numrenov" placeholder="N° Renovación" min="1" max="500">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Valor Inicial:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" [(ngModel)]="valini" [ngModelOptions]="{standalone: true}" class="form-control" id="valini" placeholder="$" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ticket-type" class="col-sm-3 control-label">Valor Final:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" [(ngModel)]="valfin" [ngModelOptions]="{standalone: true}" class="form-control" id="valfin" placeholder="$" required>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <legend>Agregar PFD</legend>
+                                                            <div class="form-group">
+                                                                <label for="ticket-attachment" class="col-sm-3 control-label">Adjuntar Archivo</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="file" [(ngModel)]="polpdf" [ngModelOptions]="{standalone: true}" accept=".pdf" id="polizaPDF">
+                                                                    <p class="help-block"><em>Tipo de Archivo válido: .pdf.
                                       MB</em></p>
-                                </div>
-                              </div>
+                                                                </div>
+                                                            </div>
 
-                              <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" data-dismiss="modal" (click)="ingresarPoliza()"
-                                  class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
-                                <input type="reset" class="btn btn-info" value="Limpiar Campos">
-                              </div>
+                                                            <div class="col-sm-offset-3 col-sm-9">
+                                                                <button type="submit" data-dismiss="modal" (click)="ingresarPoliza()" class="btn btn-success">Guardar Póliza</button>&nbsp;&nbsp;
+                                                                <input type="reset" class="btn btn-info" value="Limpiar Campos">
+                                                            </div>
 
-                            </fieldset>
-                          </form>
-                        </div>
-                      </div>
-                      <!-- END SUPPORT TICKET FORM -->
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal"><i
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <!-- END SUPPORT TICKET FORM -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal"><i
                           class="fa fa-times-circle"></i> Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END MODAL DIALOG -->
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modificar o Eliminar una Póliza</a>
-          </h4>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse">
-          <div class="panel-body">
-            <div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_jqgrid" dir="ltr"
-              style="width: 1180px;">
-              <div class="ui-widget-overlay jqgrid-overlay" id="lui_jqgrid" style="display: none;"></div>
-              <div class="loading ui-state-default ui-state-active" id="load_jqgrid" style="display: none;">Loading...
-              </div>
-              <div class="ui-jqgrid-view" id="gview_jqgrid" style="width: 1180px;">
-                <div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix"><a role="link"
-                    class="ui-jqgrid-titlebar-close HeaderButton" style="right: 0px;"><span
-                      class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title">LISTADO
-                    COMPLETO DE LAS PÓLIZAS </span></div>
-                <div class="ui-state-default ui-jqgrid-hdiv" style="width: 1180px;">
-
-                </div>
-                <div class="ui-jqgrid-bdiv" style="height: 480px; width: 1580px;">
-                  <div style="position:relative;">
-                    <div></div>
-                    <!-- 
-                           <table id="jqgrid" class="table table-striped table-hover ui-jqgrid-btable" tabindex="0" cellspacing="0" cellpadding="0" border="0" role="grid" aria-multiselectable="true" aria-labelledby="gbox_jqgrid" style="width: 998px;">
-                             -->
-                    <font size="2">
-                      <table id="datatable-basic-scrolling" class="ui-jqgrid-htable" role="grid"
-                        aria-describedby="datatable-basic-scrolling_info" style="width: 100%;">
-                        <thead>
-                          <tr class="ui-jqgrid-labels" role="rowheader">
-                            <th id="jqgrid_myac" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 50px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_myac" class="ui-jqgrid-sortable"> <span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_client_id" role="columnheader"
-                              class="ui-state-default ui-th-column ui-th-ltr" style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_client_id" class="ui-jqgrid-sortable">ASEGURADORA<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_invdate" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 150px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_invdate" class="ui-jqgrid-sortable">CI/RUC CONTRATISTA<span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_invdate" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_invdate" class="ui-jqgrid-sortable">CONTRATISTA<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_amount" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 85px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_amount" class="ui-jqgrid-sortable">N° CONTRATO <span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_tax" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_tax" class="ui-jqgrid-sortable">COBERTURA<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_total" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_total" class="ui-jqgrid-sortable">CONCEPTO<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_closed" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 80px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_closed" class="ui-jqgrid-sortable">N° POLIZA<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA PAGO ANTICIPO
-                                CONTRATO<span class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA INICIAL DE COBERTURA<span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA INICIAL <span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 200px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">FECHA FINAL<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 170px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">VALOR COBERTURA INICIAL<span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 170px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">VALOR COBERTURA ACTUAL<span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 300px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">OBSERVACIONES<span class="s-ico"
-                                  style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 180px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">NUMERO DE RENOVACIONES<span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                            <th id="jqgrid_ship_via" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
-                              style="width: 120px;">
-                              <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                style="cursor: col-resize;">&nbsp;</span>
-                              <div id="jqgh_jqgrid_ship_via" class="ui-jqgrid-sortable">ADMIN CONTRATO<span
-                                  class="s-ico" style="display:none"><span sort="asc"
-                                    class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                    sort="desc"
-                                    class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                              </div>
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="jqgfirstrow" role="row" style="height:auto">
-                            <td role="gridcell" style="height:0px;width:25px;"></td>
-                            <td role="gridcell" style="height:0px;width:80px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 80px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 100px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 100px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 85px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 60px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 100px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 80px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 85px;"></td>
-                            <td role="gridcell" style="height: 0px; width: 203px;"></td>
-                          </tr>
-                          <tr *ngFor="let objDatos of vecPoliza"
-                            class="ui-widget-content jqgrow ui-row-ltr ui-state-hover">
-                            <td role="gridcell" title="" aria-describedby="jqgrid_myac">
-                              <div style="margin-left:8px;">
-                                <a title="Modificar" href="/template/modificar?id={{objDatos.idpolizatabla}}"><img
-                                    src="assets\images\editar.PNG" width="20" height="20"></a>
-                               
-                              </div>
-                            </td>
-                            <td role="gridcell">{{objDatos.idaseguradora.nombreaseguradora}}</td>
-                            <td role="gridcell">{{objDatos.idcontrato.idcontratista.ciruc}}</td>
-                            <td role="gridcell">{{objDatos.idcontrato.idcontratista.nombrecontratista}}</td>
-                            <td role="gridcell">{{objDatos.idcontrato.codcontrato}}</td>
-                            <td role="gridcell">{{objDatos.idcobertura.descripcioncobertura}}</td>
-                            <td role="gridcell">{{objDatos.idcontrato.concepto}}</td>
-                            <td role="gridcell">{{objDatos.numpoliza}}</td>
-                            <td role="gridcell">{{objDatos.fechapagoanticipo}}</td>
-                            <td role="gridcell">{{objDatos.fechainicialcobertura}}</td>
-                            <td role="gridcell">{{objDatos.vencimientofechainicial}}</td>
-                            <td role="gridcell">{{objDatos.vencimientofechafinal}}</td>
-                            <td role="gridcell">{{objDatos.valorcoberturainicial}}</td>
-                            <td role="gridcell">{{objDatos.valorcoberturaactual}}</td>
-                            <td role="gridcell">{{objDatos.observaciones}}</td>
-                            <td role="gridcell">{{objDatos.numrenovaciones}}</td>
-                            <td role="gridcell">{{objDatos.idcontrato.idadministrador.nombreadmin}}</td>
-
-                        </tbody>
-                      </table>
-                    </font>
-                    <div class="row">
-                      <div class="col-xs-6"></div>
-                      <div class="col-xs-6">
-                        <div id="datatable-basic-scrolling_filter" class="dataTables_filter">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                    <!-- END MODAL DIALOG -->
                 </div>
-              </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modificar o Eliminar una Póliza</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <!-- INICIO TABLA DE BUSQUEDA -->
+                        <table id="dt1" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Aseguradora</th>
+                                    <th>CI/RUC Contratista</th>
+                                    <th>Contratista</th>
+                                    <th>N° Contrato</th>
+                                    <th>Cobertura</th>
+                                    <th>Concepto</th>
+                                    <th>Administrador de Contrato</th>
+                                    <th>N° Póliza</th>
+                                    <th>Fecha Pago Anticipo</th>
+                                    <th>Fecha de Cobertura</th>
+                                    <th>Fecha Inicial</th>
+                                    <th>Fecha Final</th>
 
-              <div class="ui-jqgrid-resize-mark" id="rs_mjqgrid">&nbsp;</div>
-              <div id="jqgrid-pager" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr"
-                style="width: 1016px;">
-                <div id="pg_jqgrid-pager" class="ui-pager-control" role="group">
-                  <table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table"
-                    style="width:100%;table-layout:fixed;height:100%;" role="row">
-                    <tbody>
-                      <tr>
-                        <td id="jqgrid-pager_left" align="left">
-                          <table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table navtable"
-                            style="float:left;table-layout:auto;">
+                                    <th>Valor de Cobertura Actual</th>
+                                    <th>Observaciones</th>
+                                    <th>N° Renov.</th>
+
+                                </tr>
+                            </thead>
                             <tbody>
-                              <tr>
-                                <td class="ui-pg-button ui-corner-all" title="Reload Grid" id="refresh_jqgrid">
-                                  <div class="ui-pg-div"><span class="ui-icon ui-icon-refresh"
-                                      (click)="ConsumoPoliza()"></span></div>
-                                </td>
-                                <td class="ui-pg-button ui-corner-all" title="Find records" id="search_jqgrid">
-                                  <div class="ui-pg-div">                                     
-                                    <span class="ui-icon ui-icon-search" data-toggle="modal"data-target="#buscar"></span>
-                                  </div>
+                                <tr *ngFor="let objDatos of vecPoliza">
+                                    <td>
+                                        <div style="margin-left:8px;">
+                                            <a title="Modificar" href="/template/modificar?id={{objDatos.idpolizatabla}}"><img src="assets\images\editar.PNG" width="20" height="20"></a>
+                                            <a title="Eliminar" href="/template/eliminar?id={{objDatos.idpolizatabla}}"><img src="assets\images\eliminar.PNG" width="20" height="20"></a>
+                                        </div>
+                                    </td>
+                                    <td>{{objDatos.idaseguradora.nombreaseguradora}}</td>
+                                    <td>{{objDatos.idcontrato.idcontratista.ciruc}}</td>
+                                    <td>{{objDatos.idcontrato.idcontratista.nombrecontratista}}</td>
+                                    <td>{{objDatos.idcontrato.codcontrato}}</td>
+                                    <td>{{objDatos.idcobertura.descripcioncobertura}}</td>
+                                    <td>{{objDatos.idcontrato.concepto}}</td>
+                                    <td>{{objDatos.idcontrato.idadministrador.nombreadmin}}</td>
+                                    <td>{{objDatos.numpoliza}}</td>
+                                    <td>{{objDatos.fechapagoanticipo}}</td>
+                                    <td>{{objDatos.fechainicialcobertura}}</td>
+                                    <td>{{objDatos.vencimientofechainicial}}</td>
+                                    <td>{{objDatos.vencimientofechafinal}}</td>
 
-                                </td>
+                                    <td>{{objDatos.valorcoberturaactual}}</td>
+                                    <td>{{objDatos.observaciones}}</td>
+                                    <td>{{objDatos.numrenovaciones}}</td>
 
-                              </tr>
+                                </tr>
                             </tbody>
-                            
-              <div class="modal fade" id="buscar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="myModalLabel"></h4>
-                    </div>
-                    <div class="modal-body">
-                        
-                            <div class="widget-header">
-                              
-                            </div>
-                            <div class="widget-content">
-                              <form (ngSubmit)="buscarPoliza()" class="form-horizontal" role="form">
-                                <fieldset>
-                                  <legend>Búsqueda de Póliza</legend>
-                                  <div class="form-group">
-                                    <label for="ticket-type" class="col-sm-3 control-label">Id de Póliza:</label>
-                                    <div class="col-sm-9">
-                                      <input [(ngModel)]="idpoliza" [ngModelOptions]="{standalone: true}" type="text"  class="form-control" id="idpoliza" placeholder="Id de Poliza a Buscar" >
-                                    </div>
-                                  </div>
-            <div class="col-sm-offset-3 col-sm-9">
-                                      <button type="submit"  (click)="buscarPoliza()" style="margin-left: 3em" data-dismiss="modal" class="btn btn-success">Buscar Póliza</button>
-                                    </div>
-                                </fieldset>
-                                </form>
-                            </div>
-                          </div>
-                   
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal"><i
-                          class="fa fa-times-circle"></i>Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                          </table>
-                        </td>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Aseguradora</th>
+                                    <th>CI/RUC Contratista</th>
+                                    <th>Contratista</th>
+                                    <th>N° Contrato</th>
+                                    <th>Cobertura</th>
+                                    <th>Concepto</th>
+                                    <th>Administrador de Contrato</th>
+                                    <th>N° Póliza</th>
+                                    <th>Fecha Pago Anticipo</th>
+                                    <th>Fecha de Cobertura</th>
+                                    <th>Fecha Inicial</th>
+                                    <th>Fecha Final</th>
 
-                      </tr>
-                    </tbody>
-                  </table>
-                  
+                                    <th>Valor de Cobertura Actual</th>
+                                    <th>Observaciones</th>
+                                    <th>N° Renov.</th>
+
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <!-- FIN TABLA DE BUSQUEDA -->
+
+                    </div>
                 </div>
-              </div>
             </div>
 
-          </div>
-          
-          
         </div>
-      </div>
-
     </div>
-  </div>
 
 
-  <p>{{idaseguradora}}</p>
-  <p>{{idcobertura}}</p>
-  <p>{{idcontrato}}</p>
-  <p>{{numpoliza}}</p>
-  <p>{{idestado}}</p>
-  <p>{{finicob}}</p>
-  <p>{{fpagoant}}</p>
-  <p>{{vencini}}</p>
-  <p>{{vencfin}}</p>
-  <p>{{observaciones}}</p>
-  <p>{{numrenov}}</p>
-  <p>{{valini}}</p>
-  <p>{{valfin}}</p>
-  <p>{{polpdf}}</p>
+    <p>{{idaseguradora}}</p>
+    <p>{{idcobertura}}</p>
+    <p>{{idcontrato}}</p>
+    <p>{{numpoliza}}</p>
+    <p>{{idestado}}</p>
+    <p>{{finicob}}</p>
+    <p>{{fpagoant}}</p>
+    <p>{{vencini}}</p>
+    <p>{{vencfin}}</p>
+    <p>{{observaciones}}</p>
+    <p>{{numrenov}}</p>
+    <p>{{valini}}</p>
+    <p>{{valfin}}</p>
+    <p>{{polpdf}}</p>
 </body>
 
 </html>

@@ -23,11 +23,18 @@ export class ReportesComponent implements OnInit {
   }
   
   ngOnInit():void {    
-    
+    $(function (){
+      $('#dt').DataTable();
+    });
+    $(function (){
+      $('#dt1').DataTable();
+    });
     this.servicios.ServicioWebPruebaED().subscribe(polizas=>
     {this.vecPoliza=polizas;});   
     this.servicios.ServicioWebPruebaED1().subscribe(polizas1=>
       {this.vecPoliza1=polizas1;});   
+      
+      
       this.dataTable =$(this.table.nativeElement);
     this.dataTable.dataTable();  
   }
