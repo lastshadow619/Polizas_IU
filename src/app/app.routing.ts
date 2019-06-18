@@ -15,6 +15,7 @@ import { PolizasComponent } from './polizas/polizas.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { ModificarEstadoComponent } from './modificar-estado/modificar-estado.component';
+import { ModificarCoberturaComponent } from './modificar-cobertura/modificar-cobertura.component';
 const appRoutes: Routes = [
 
     {
@@ -24,6 +25,10 @@ const appRoutes: Routes = [
             {
                 path: 'modificarEstado',
                 component: ModificarEstadoComponent
+            },
+            {
+                path: 'modificarCobertura',
+                component: ModificarCoberturaComponent
             },
             {
                 path: 'modificar',

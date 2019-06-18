@@ -88,11 +88,18 @@ export class ServiciosWebConsumo {
         return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/obtenertodos')
             .pipe(map(res => res.json()))
     }
-    //Servicio web listar todas las polizas
+    //Servicio web listar todas las polizas por vencer
     ServicioWebPruebaED1(){
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/vencimiento/2019-06-25')
+            .pipe(map(res => res.json()))
+    }
+    //Servicio web listar todas las polizas vencidas
+    ServicioWebPruebaED2(){
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get(this.urlPruebaEd + 'AD_Polizas/webresources/entidades.poliza/obtenervencidas')
             .pipe(map(res => res.json()))
     }
     //Servicio Web Prueba 

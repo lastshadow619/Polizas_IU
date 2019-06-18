@@ -28,11 +28,13 @@ import { PolizasComponent } from './polizas/polizas.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { ModificarEstadoComponent } from './modificar-estado/modificar-estado.component';
+import { ModificarCoberturaComponent } from './modificar-cobertura/modificar-cobertura.component';
 //Servicios
 import { ConfiguracionesUrl } from './ServiciosWeb/configuracionesUrl.service';
 import { ServiciosWebConsumo } from './ServiciosWeb/servicioswebconsumo.service';
 import { Mensajes } from './Recursos/Mensajes.services';
 import {ToolsService } from './Recursos/Tools.services';
+
 
 
 
@@ -61,6 +63,7 @@ import {ToolsService } from './Recursos/Tools.services';
     ReportesComponent,
     ModificarComponent,
     ModificarEstadoComponent,
+    ModificarCoberturaComponent,
   
   ],
   imports: [

@@ -152,8 +152,74 @@
 
     </div>
     <div class="tab-pane fade" id="settings2">
+        <!-- INICIO TABLA DE BUSQUEDA -->
+        <table id="dt2" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Aseguradora</th>
+                    <th>CI/RUC Contratista</th>
+                    <th>Contratista</th>
+                    <th>N° Contrato</th>
+                    <th>Cobertura</th>
+                    <th>Concepto</th>
+                    <th>Administrador de Contrato</th>
+                    <th>N° Póliza</th>
+                    <th>Fecha Pago Anticipo</th>
+                    <th>Fecha de Cobertura</th>
+                    <th>Fecha Inicial</th>
+                    <th>Fecha Final</th>
+                    <th>Valor de Cobertura Inicial</th>
+                    <th>Valor de Cobertura Actual</th>
+                    <th>Observaciones</th>
+                    <th>N° Renovación</th>
 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let objDatos of vecPoliza2">
+                    <td>{{objDatos.idaseguradora.nombreaseguradora}}</td>
+                    <td>{{objDatos.idcontrato.idcontratista.ciruc}}</td>
+                    <td>{{objDatos.idcontrato.idcontratista.nombrecontratista}}</td>
+                    <td>{{objDatos.idcontrato.codcontrato}}</td>
+                    <td>{{objDatos.idcobertura.descripcioncobertura}}</td>
+                    <td>{{objDatos.idcontrato.concepto}}</td>
+                    <td>{{objDatos.idcontrato.idadministrador.nombreadmin}}</td>
+                    <td>{{objDatos.numpoliza}}</td>
+                    <td>{{objDatos.fechapagoanticipo}}</td>
+                    <td>{{objDatos.fechainicialcobertura}}</td>
+                    <td>{{objDatos.vencimientofechainicial}}</td>
+                    <td>{{objDatos.vencimientofechafinal}}</td>
+                    <td>{{objDatos.valorcoberturainicial}}</td>
+                    <td>{{objDatos.valorcoberturaactual}}</td>
+                    <td>{{objDatos.observaciones}}</td>
+                    <td>{{objDatos.numrenovaciones}}</td>
 
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+
+                    <th>Aseguradora</th>
+                    <th>CI/RUC Contratista</th>
+                    <th>Contratista</th>
+                    <th>N° Contrato</th>
+                    <th>Cobertura</th>
+                    <th>Concepto</th>
+                    <th>Administrador de Contrato</th>
+                    <th>N° Póliza</th>
+                    <th>Fecha Pago Anticipo</th>
+                    <th>Fecha de Cobertura</th>
+                    <th>Fecha Inicial</th>
+                    <th>Fecha Final</th>
+                    <th>Valor de Cobertura Inicial</th>
+                    <th>Valor de Cobertura Actual</th>
+                    <th>Observaciones</th>
+                    <th>N° de Renovación</th>
+
+                </tr>
+            </tfoot>
+        </table>
+        <!-- FIN TABLA DE BUSQUEDA -->
     </div>
     <div class="tab-pane fade in" id="dropdown21">
         <h5>Tab Dropdown 1</h5>

@@ -15,6 +15,7 @@ export class ReportesComponent implements OnInit {
   
   public vecPoliza:Array<any>;
   public vecPoliza1:Array<any>;
+  public vecPoliza2:Array<any>;
   @ViewChild('dataTable') table: ElementRef;
   dataTable: any;
 
@@ -29,11 +30,15 @@ export class ReportesComponent implements OnInit {
     $(function (){
       $('#dt1').DataTable();
     });
+    $(function (){
+      $('#dt2').DataTable();
+    });
     this.servicios.ServicioWebPruebaED().subscribe(polizas=>
     {this.vecPoliza=polizas;});   
     this.servicios.ServicioWebPruebaED1().subscribe(polizas1=>
       {this.vecPoliza1=polizas1;});   
-      
+      this.servicios.ServicioWebPruebaED2().subscribe(polizas2=>
+        {this.vecPoliza2=polizas2;});     
       
       this.dataTable =$(this.table.nativeElement);
     this.dataTable.dataTable();  

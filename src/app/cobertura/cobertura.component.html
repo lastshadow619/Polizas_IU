@@ -79,6 +79,39 @@
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
+                    <!--Eliminar-->
+                    <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel"></h4>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="widget-header">
+
+                                    </div>
+                                    <div class="widget-content">
+                                        <form (ngSubmit)="eliminarCobertura()" class="form-horizontal" role="form">
+                                            <fieldset>
+                                                <legend>¿Está seguro que desea eliminar el tipo de cobertura?</legend>
+
+                                                <div>
+                                                    <button type="submit" (click)="eliminarCobertura()" style="float: left; margin-left: 6em;" data-dismiss="modal" class="btn btn-success">Eliminar Cobertura</button>
+                                                    <button type="button" style="float: right; margin-right: 6em;" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--fin eliminar-->
                     <table id="dt" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -90,14 +123,13 @@
                         <tbody>
                             <tr *ngFor="let objDatos of vecCobertura">
                                 <td>
-                                    <div style="margin-left:8px;">
-                                        <a title="Modificar" href="/template/modificar?id={{objDatos.idcobertura}}"><img src="assets\images\editar.PNG" width="20" height="20"></a>
-                                        <a title="Eliminar" href="/template/eliminar?id={{objDatos.idcobertura}}"><img src="assets\images\eliminar.PNG" width="20" height="20"></a>
+                                    <div>
+                                        <a title="Modificar" href="/template/modificarCobertura?id={{objDatos.idcobertura}}"> <button data-toggle="modal" data-target="#modificar"><img src="assets\images\editar.PNG" width="20" height="20"></button></a>
+                                        <button href="#eliminar" data-toggle="modal" data-target="#eliminar"><img src="assets\images\eliminar.PNG " width="20 " height="20 "></button>
                                     </div>
                                 </td>
                                 <td>{{objDatos.idcobertura}}</td>
                                 <td>{{objDatos.descripcioncobertura}}</td>
-
                             </tr>
                         </tbody>
                         <tfoot>
@@ -105,7 +137,6 @@
                                 <th></th>
                                 <th>ID</th>
                                 <th>Descripción</th>
-
                             </tr>
                         </tfoot>
                     </table>
@@ -117,5 +148,6 @@
     </div>
 
 </body>
+
 
 </html>

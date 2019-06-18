@@ -20,16 +20,19 @@
                     <!-- MODAL DIALOG -->
                     <div class="widget">
                         <div class="widget-content" style="align-items: inherit">
+
+
                             <button class="btn btn-primary btn-lg" style="margin-left: 45%" data-toggle="modal" data-target="#myModal">Ingresar una nueva Póliza</button>
 
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog modal-lg" style=" width: 5050%;">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                             <h4 class="modal-title" id="myModalLabel"></h4>
                                         </div>
                                         <div class="modal-body">
+                                            <!-- INICIO CUERPO MODAL -->
                                             <!-- SUPPOR TICKET FORM -->
                                             <div class="widget">
                                                 <div class="widget-header">
@@ -43,27 +46,27 @@
                                                                 <label for="ticket-type" class="col-sm-3 control-label">Aseguradora:</label>
                                                                 <div class="col-sm-9">
                                                                     <select id="idaseguradora" [(ngModel)]="idaseguradora" name="idaseguradora" class="form-control input-sm" type="text" placeholder=".input-sm" required>
-                                    <option value="1" selected>Seguros Colonial (Quito)</option>
-                                    <option value="2">Seguros Colnial QBE</option>
-                                    <option value="3">Seguros Oriente</option>
-                                    <option value="4">Aseguradora del Sur</option>
-                                    <option value="5">Seguros Equinoccial</option>
-                                    <option value="6">Latina de Seguros y Reaseguros</option>
-                                    <option value="7">Banco del Pichincha</option>
-                                    <option value="8">Seguros Confianza</option>
-                                    <option value="9">Banco Internacional</option>
-                                  </select>
+<option value="1" selected>Seguros Colonial (Quito)</option>
+<option value="2">Seguros Colnial QBE</option>
+<option value="3">Seguros Oriente</option>
+<option value="4">Aseguradora del Sur</option>
+<option value="5">Seguros Equinoccial</option>
+<option value="6">Latina de Seguros y Reaseguros</option>
+<option value="7">Banco del Pichincha</option>
+<option value="8">Seguros Confianza</option>
+<option value="9">Banco Internacional</option>
+</select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="ticket-type" class="col-sm-3 control-label">Cobertura:</label>
                                                                 <div class="col-sm-9">
                                                                     <select id="idcobertura" [(ngModel)]="idcobertura" name="idcobertura" class="form-control input-sm" type="text" placeholder=".input-sm">
-                                    <option value="1" selected>Buen uso de Anticipo</option>
-                                    <option value="2">Cumplimiento de Contrato</option>
-                                    <option value="3">Garantía Bancaria</option>
-                                    <option value="4">Certificación de depósito a plazo fijo</option>
-                                  </select>
+<option value="1" selected>Buen uso de Anticipo</option>
+<option value="2">Cumplimiento de Contrato</option>
+<option value="3">Garantía Bancaria</option>
+<option value="4">Certificación de depósito a plazo fijo</option>
+</select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -83,14 +86,14 @@
 
                                                                 <div class="col-sm-9">
                                                                     <select id="idestado" [(ngModel)]="idestado" name="idestado" class="form-control input-sm" type="text" placeholder=".input-sm">
-                                    <option selected value="1">Vigente</option>
-                                    <option value="2">Caducada</option>
-                                  </select>
+<option selected value="1">Vigente</option>
+<option value="2">Caducada</option>
+</select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="ticket-message" class="col-sm-3 control-label">Fecha inicial de
-                                  Cobertura:</label>
+Cobertura:</label>
                                                                 <div class="col-sm-9">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -100,7 +103,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="ticket-message" class="col-sm-3 control-label">Fecha pago de
-                                  Anticipo:</label>
+Anticipo:</label>
                                                                 <div class="col-sm-9">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -110,7 +113,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
-                                  Inicial:</label>
+Inicial:</label>
                                                                 <div class="col-sm-9">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -120,7 +123,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="ticket-message" class="col-sm-3 control-label">Vencimiento fecha
-                                  Final:</label>
+Final:</label>
                                                                 <div class="col-sm-9">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -160,7 +163,7 @@
                                                                 <div class="col-md-9">
                                                                     <input type="file" [(ngModel)]="polpdf" [ngModelOptions]="{standalone: true}" accept=".pdf" id="polizaPDF">
                                                                     <p class="help-block"><em>Tipo de Archivo válido: .pdf.
-                                      MB</em></p>
+MB</em></p>
                                                                 </div>
                                                             </div>
 
@@ -174,6 +177,7 @@
                                                 </div>
                                             </div>
                                             <!-- END SUPPORT TICKET FORM -->
+                                            <!-- FIN CUERPO MODAL -->
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><i
@@ -224,7 +228,6 @@
                                     <td>
                                         <div style="margin-left:8px;">
                                             <a title="Modificar" href="/template/modificar?id={{objDatos.idpolizatabla}}"><img src="assets\images\editar.PNG" width="20" height="20"></a>
-                                            <a title="Eliminar" href="/template/eliminar?id={{objDatos.idpolizatabla}}"><img src="assets\images\eliminar.PNG" width="20" height="20"></a>
                                         </div>
                                     </td>
                                     <td>{{objDatos.idaseguradora.nombreaseguradora}}</td>
