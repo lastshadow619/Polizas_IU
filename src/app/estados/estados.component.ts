@@ -30,6 +30,8 @@ export class EstadosComponent implements OnInit {
       {this.vecEstados=estados;});  
 
   }
+  
+
   MensajeError() {
     var  item=alert("No se han recibido datos");
    }
@@ -37,13 +39,41 @@ export class EstadosComponent implements OnInit {
    MensajeCorrecto() {
     var  item=alert("Datos Cargados Correctamente");
    }
- 
-  ingresarEstado() {  
-      window.alert('Error en el ingreso!!');
-      window.close();
-    }
-    buscarEstado() {  
-      window.alert('Datos encontrados!!');
-      window.close();
-    }
+   async eliminarEstado(objDatos){      
+    var r = confirm("¿Está seguro que desea eliminar este Estado?");
+    if (r == true) {
+    const Auditoria = await new Promise<any>(resolve =>
+    this.servicios.ServicioWebEliminarEstado(objDatos)
+      .subscribe(translated => {
+        resolve(translated)
+      }));
+      this.servicios.ServicioWebEstado().subscribe(estados=>
+        {this.vecEstados=estados;}); 
+        $(function (){
+          $('#dt').DataTable();
+        });
+} else {
+  window.alert('No se ha eliminado Nada');
 }
+}
+
+async ingresarEstado(descripcion){    
+  if ((descripcion.length>=20)||(descripcion.length<4))  {
+    window.alert('Error! Estado no Válido');
+  } else{ 
+    const Auditoria = await new Promise<any>(resolve =>
+      this.servicios.ServicioWebIngresarEstado(descripcion)
+        .subscribe(translated => {
+          resolve(translated)
+        }));
+        this.servicios.ServicioWebEstado().subscribe(estados=>
+          {this.vecEstados=estados;}); 
+          $(function (){
+            $('#dt').DataTable();
+          }); 
+          window.alert('Estado Ingresado Correctamente');
+   
+  }
+}
+
+ }
